@@ -8,8 +8,8 @@
             <div class="input-label">
               Figura
             </div>
-            <select ng-model="selected">
-              <option  ng-selected="{{i.figura =='circulo'}}" ng-repeat="i in figuras" value="{{i.figura}}"> {{i.figura| uppercase}}</option>
+            <select ng-model="selected" ng-change="index(i)">
+              <option ng-selected="{{i.figura =='circulo'}}" ng-repeat="i in figuras" value="{{i.figura}}"> {{i.figura| uppercase}}</option>
             </select>
           </label>
       </div>

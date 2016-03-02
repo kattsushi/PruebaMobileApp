@@ -1,7 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {
-
+.controller('DashCtrl', function($scope, figServ) {
 
   $scope.figuras = [{
     figura : "circulo",
@@ -50,10 +49,21 @@ angular.module('starter.controllers', [])
       return area;
     }
   }];
+  
+  function index(i) {
+    figServ.index = i;
+    console.log(i);
+  }
+  figServ.data = $scope.figuras;
 
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('AccountCtrl', function($scope,figServ) {
+  
+  $scope.enviar = function () {
+    
+      console.warn(figServ.data[figServ.index]);
+  }
   $scope.settings = {
     enableFriends: true
   };

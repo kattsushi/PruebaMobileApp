@@ -1,9 +1,15 @@
-<ion-view view-title="Account">
+<ion-view view-title="Enviar Resultados">
   <ion-content>
     <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
+    <div class="list">
+      <label class="item item-input">
+        <span class="input-label">Email</span>
+        <input type="text">
+      </label>
+      <button ng-click="enviar()" class="button button-block button-positive">
+        Enviar
+      </button>
+      </div>
     </ion-list>
   </ion-content>
 </ion-view>
