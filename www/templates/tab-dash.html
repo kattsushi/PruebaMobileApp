@@ -1,0 +1,45 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="padding">
+    <h2 >Calcula el area!</h2>
+    <div class="list card">
+      <div class="list">
+        
+          <label class="item item-input item-select">
+            <div class="input-label">
+              Figura
+            </div>
+            <select ng-model="selected">
+              <option  ng-selected ng-repeat="i in figuras" value="{{i.figura}}"> {{i.figura}}</option>
+            </select>
+          </label>
+      </div>
+      <div class="list list-inset">
+        <label class="item item-input">
+          <input type="number" placeholder="X" ng-model="x">
+        </label>
+        <label class="item item-input">
+          <input type="number" placeholder="Y" ng-model="y">
+        </label>
+      </div>
+      <section ng-repeat="z in figuras |filter: selected | limitTo : 1 ">
+        <div class="item item-avatar">
+          <img src="img/{{z.figura}}.png" >
+        </div>
+          <h2>Area de un {{z.figura | uppercase}}</h2>
+  
+        <div class="row item item-body">
+          <div>
+          <img class="col col-60 full-image" src="img/{{z.figura}}.png" style="max-width:75%">
+          <p>
+            {{z.comentario}}
+          </p>
+          </div>
+          <div class="col">
+            <p>Resultado es :</p> </br>
+            <span id="area">{{ z.area(x,y) }}</span>
+          </div>
+        </div>
+      </section>  
+    </div>
+  </ion-content>
+</ion-view>
