@@ -1,11 +1,13 @@
 angular.module('starter.controllers', [])
 
 .controller('DashCtrl', function($scope) {
-  $scope.x = 0;
-  $scope.y = 0;
+
 
   $scope.figuras = [{
     figura : "circulo",
+    parm1 : "radio",
+    parm2 : "",
+    use2 : false,
     comentario :"Para cacular el circulo necesitamos el radio",
     pi : Math.PI,
     area : function (a,b) {
@@ -14,6 +16,9 @@ angular.module('starter.controllers', [])
     }
   },{
     figura : "triangulo",
+    parm1 : "base",
+    parm2 : "altura",
+    use2 : true,
     comentario :"Para cacular el área del triangulo necesitamos la base y la altura",
     base : $scope.x ,
     altura : $scope.y,
@@ -23,6 +28,9 @@ angular.module('starter.controllers', [])
     }
   },{
     figura : "cuadrado",
+    parm1 : "lado",
+    parm2 : "",
+    use2 : false,
     comentario :"Para cacular el área del cuadrado necesitamos uno de sus lados",
     lado : $scope.x,
     area : function (a,b) {
@@ -31,6 +39,9 @@ angular.module('starter.controllers', [])
     }
   },{
     figura : "rectangulo",
+    parm1 : "base",
+    parm2 : "altura",
+    use2 : true,
     comentario :"Para cacular el área del triangulo necesitamos la base y la altura",
     base : $scope.x ,
     altura : $scope.y,
@@ -38,7 +49,7 @@ angular.module('starter.controllers', [])
       if (a > 0 && b > 0) { var area = (a * b);}
       return area;
     }
-  },];
+  }];
 
 })
 
