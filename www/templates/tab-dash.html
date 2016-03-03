@@ -18,7 +18,7 @@
           <label class="item item-input">
             <input type="text" placeholder="{{z.parm1}}" ng-model="x">
           </label>
-          <label ng-if="z.use2" class="item item-input">
+          <label ng-show="z.use2" class="item item-input">
             <input type="text" placeholder="{{z.parm2}}" ng-model="y">
           </label>
         </div>
@@ -36,10 +36,21 @@
           </div>
           <div class="col">
             <p>Resultado es :</p> </br>
-            <span id="area">{{ z.area(x,y) }}</span>
+            <span ng-keyup="index(z.id)" ng-model="id" id="area">{{ z.calArea(x,y) }}</span>
           </div>
         </div>
-      </section>  
+      <ion-list>
+    <div class="list">
+      <label class="item item-input">
+        <span class="input-label">Email</span>
+        <input type="email" ng-model="$parent.email">
+      </label>
+      <button ng-click="enviar(z.id)" class="button button-block button-positive">
+        Enviar
+      </button>
+      </div>
+    </ion-list>  
+      </section>
     </div>
   </ion-content>
 </ion-view>
