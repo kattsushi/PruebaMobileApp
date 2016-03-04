@@ -13,7 +13,7 @@
             </select>
           </label>
       </div>
-      <section ng-repeat="z in figuras |filter: selected | limitTo : 1 ">
+      <section style="text-align: center" ng-repeat="z in figuras |filter: selected | limitTo : 1 ">
         <div class="list list-inset">
           <label class="item item-input">
             <input type="text" placeholder="{{z.parm1}}" ng-model="x">
@@ -34,11 +34,12 @@
             {{z.comentario}}
           </p>
           </div>
-          <div class="col">
+          
+        </div>
+        <div >
             <p>Resultado es :</p> </br>
             <span ng-keyup="index(z.id)" ng-model="id" id="area">{{ z.calArea(x,y) }}</span>
           </div>
-        </div>
       <ion-list>
     <div class="list">
       <label class="item item-input">

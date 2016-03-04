@@ -83,11 +83,4 @@ angular.module('starter.controllers', [])
   }
   
 
-})
-
-.controller('AccountCtrl', function($scope,figServ) {
-  
-  $scope.settings = {
-    enableFriends: true
-  };
 });
